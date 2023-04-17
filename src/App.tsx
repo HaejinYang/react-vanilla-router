@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import { AccordionList } from "./component/Accordion/Accordion";
 
 function App() {
   return (
-    <div className="App">
-     <h1>hello world</h1>
+    <div>
+      <AccordionList />
     </div>
   );
 }
