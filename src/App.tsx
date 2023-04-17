@@ -2,6 +2,8 @@ import React from "react";
 import { AccordionList } from "./component/Accordion/Accordion";
 import ColorSelector from "./component/ColorSelector/ColorSelector";
 import Interpreter from "./component/Interpreter/Interpreter";
+import Route from "./component/Route/Route";
+import Header from "./component/Header/Header";
 
 const ShowAccordionList = () => {
   if (window.location.pathname === "/accordion") {
@@ -25,9 +27,21 @@ function App() {
   console.log(window.location.pathname);
   return (
     <>
-      {ShowAccordionList()}
-      {ShowColorSelector()}
-      {ShowInterpreter()}
+      <Header />
+      <Route route="/accordion">
+        <AccordionList />
+      </Route>
+      <Route route="/color-selector">
+        <ColorSelector />
+      </Route>
+      <Route route="/interpreter">
+        <Interpreter />
+      </Route>
+      <Route route="/all">
+        <AccordionList />
+        <ColorSelector />
+        <Interpreter />
+      </Route>
     </>
   );
 }
