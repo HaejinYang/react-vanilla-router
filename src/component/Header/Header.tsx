@@ -1,20 +1,21 @@
 import React from "react";
+import Link from "../Link/Link";
 
 const Header: React.FC = () => {
   return (
     <div>
       <ul>
         <li>
-          <a href="/all">All</a>
+          <Link href="/all">all</Link>
         </li>
         <li>
-          <a href="/accordion">아코디언</a>
+          <Link href="/accordion">아코디언</Link>
         </li>
         <li>
-          <a href="/color-selector">색깔선택</a>
+          <Link href="/color-selector">색깔선택</Link>
         </li>
         <li>
-          <a href="/interpreter">인터프리터</a>
+          <Link href="/interpreter">인터프리터</Link>
         </li>
       </ul>
     </div>

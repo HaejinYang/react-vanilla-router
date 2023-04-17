@@ -24,7 +24,6 @@ const ShowInterpreter = () => {
 };
 
 function App() {
-  console.log(window.location.pathname);
   return (
     <>
       <Header />

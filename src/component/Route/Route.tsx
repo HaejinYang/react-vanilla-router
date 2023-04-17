@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface RouteProps {
   route: string;
@@ -6,7 +6,20 @@ interface RouteProps {
 }
 
 const Route: React.FC<RouteProps> = ({ route, children }) => {
-  return <div>{window.location.pathname === route ? children : null}</div>;
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname);
+    };
+
+    window.addEventListener("popstate", handleLocationChange);
+
+    return () => {
+      window.removeEventListener("popstate", handleLocationChange);
+    };
+  }, []);
+
+  return <div>{currentPath === route ? children : null}</div>;
 };
 
 export default Route;
